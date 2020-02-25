@@ -1,0 +1,1 @@
+screen -A -m -d -S rsps /opt/jdk-13/bin/java -Xmx768m -cp bin:deps/gson-2.2.4.jar:deps/jython.jar:deps/log4j-1.2.15.jar:deps/mina.jar:deps/mysql.jar:deps/poi.jar:deps/slf4j.jar:deps/slfj-nop.jar:deps/xstream.jar: server.Server

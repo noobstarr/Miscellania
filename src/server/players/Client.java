@@ -367,7 +367,7 @@ public class Client extends Player {
 				getPA().sendFrame126("", i);
 			}
 			sendMessage("Welcome to "+Config.SERVER_NAME);
-			sendMessage("@red@We are in alpha stage! Please report all bugs in the discord!");
+			sendMessage("@red@THIS IS A DEVELOPMENTAL SERVER");
 			getPA().showOption(4, 0,"Trade With", 3);
 			getPA().showOption(5, 0,"Follow", 4);
 			getItems().resetItems(3214);

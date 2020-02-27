@@ -240,7 +240,7 @@ public class CastleWarObjects {
 package server.content.minigames;
 
 import server.Config;
-import server.content.skills.Mining;
+import server.content.skills.impl.Mining;
 import server.objects.Object;
 import server.players.Client;
 import server.players.PlayerHandler;

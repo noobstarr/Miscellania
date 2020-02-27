@@ -6,20 +6,21 @@ import server.util.CycleEventHandler;
 import server.util.Misc;
 import server.clipping.Region;
 import server.content.minigames.CastleWars;
+import server.content.objects.ClimbOther;
 import server.content.objects.Climbing;
 import server.content.objects.Doors;
 import server.content.objects.DoubleGates;
 import server.content.objects.FlourMill;
 import server.content.objects.Levers;
 import server.content.objects.OtherObjects;
+import server.content.objects.PassDoor;
 import server.content.objects.Searching;
 import server.content.objects.SingleGates;
-import server.content.objects.UseOther;
-import server.content.skills.Mining;
-import server.content.skills.Runecrafting;
-import server.objects.ClimbOther;
-import server.objects.ClimbOther.ClimbData;
-import server.objects.PassDoor;
+import server.content.objects.ClimbOther.ClimbData;
+import server.content.skills.*;
+import server.content.skills.impl.Mining;
+import server.content.skills.impl.Runecrafting;
+import server.content.skills.impl.Stalls;
 import server.players.Client;
 import server.players.PacketType;
 /**
@@ -67,6 +68,12 @@ public class ClickObject implements PacketType {
 			for (ClimbData t: ClimbData.values()) {
 				if (packetType == t.getOpen()) {
 					ClimbOther.useOther(c, packetType);
+				}
+			}
+			if (Stalls.isObject(c.objectId)) {
+				if(c.goodDistance(c.getX(), c.getY(), c.objectX, c.objectY, 2)) {
+				Stalls.attemptStall(c, c.objectId, c.objectX, c.objectX);
+				return;
 				}
 			}
 			if(c.goodDistance(c.getX(), c.getY(), c.objectX, c.objectY, 1)) {
@@ -430,7 +437,7 @@ public class ClickObject implements PacketType {
 					c.getPlayerAssistant().movePlayer(2696, 9683, 0);
 					c.sendMessage("You climb down.");
 				} else {
-					UseOther.useDown(c, c.objectId);
+					ClimbOther.useOther(c, c.objectId);
 				}
 				break;
 
@@ -438,7 +445,7 @@ public class ClickObject implements PacketType {
 				case 9472:
 				case 11867:
 				case 100:
-					UseOther.useDown(c, c.objectId);
+					ClimbOther.useOther(c, c.objectId);
 					break;
 
 				case 1739:

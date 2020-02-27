@@ -3,20 +3,20 @@ package server.packets;
 
 import server.Config;
 import server.Server;
-import server.content.Teles;
+import server.content.items.JewelryMaking;
+import server.content.items.LeatherMaking;
+import server.content.items.Tanning;
+import server.content.items.Teles;
+import server.content.items.CraftingData.tanningData;
 import server.content.minigames.Barrows;
 import server.content.objects.Climbing;
 import server.content.objects.Flowers;
 import server.content.randoms.SandwhichLady;
-import server.content.skills.Cooking;
-import server.content.skills.CraftingData.tanningData;
-import server.content.skills.Fletching;
-import server.content.skills.Herblore;
-import server.content.skills.JewelryMaking;
-import server.content.skills.LeatherMaking;
-import server.content.skills.Smelting;
-import server.content.skills.Smithing;
-import server.content.skills.Tanning;
+import server.content.skills.impl.Cooking;
+import server.content.skills.impl.Fletching;
+import server.content.skills.impl.Herblore;
+import server.content.skills.impl.Smelting;
+import server.content.skills.impl.Smithing;
 import server.items.GameItem;
 import server.players.Client;
 import server.players.PacketType;
@@ -65,7 +65,7 @@ public class ClickingButtons implements PacketType {
 		case 4140:
 		if (c.newPlayer)
 			return;
-		c.getDH().sendOption5("Rock Crabs", "Slayer Dungeon", "Varrock Sewers", "Bandits", "-> more <-");
+		c.getDH().sendOption5("Rock Crabs", "Slayer Dungeon", "Varrock Sewers", "Bandits", "-> MORE <-");
 		c.teleAction = 1;
 		break;
 
@@ -74,7 +74,7 @@ public class ClickingButtons implements PacketType {
 		case 50245:
 			if (c.newPlayer)
 				return;
-		c.getDH().sendOption5("Lumbridge", "Varrock", "Falador", "Ardougne", "-> more <-");
+		c.getDH().sendOption5("Lumbridge", "Varrock", "Falador", "Ardougne", "-> MORE <-");
 		c.teleAction = 5;
 		break;
 
@@ -93,7 +93,7 @@ public class ClickingButtons implements PacketType {
 		case 4150:
 			if (c.newPlayer)
 				return;
-		c.getDH().sendOption5("PvP zone [SAFE]", "Mage Bank [SAFE]", "West Dragons [DANGEROUS]", "Varrock Multi [SAFE]", "Rogue's Castle [DANGEROUS]");
+		c.getDH().sendOption5("PvP zone", "Mage Bank", "West Dragons", "Varrock Multi", "Rogue's Castle");
 		c.teleAction = 4;
 		break;
 

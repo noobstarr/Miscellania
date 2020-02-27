@@ -1,6 +1,6 @@
 package server.packets;
 
-import server.content.skills.Cooking;
+import server.content.skills.impl.Cooking;
 import server.items.UseItem;
 import server.players.Client;
 import server.players.PacketType;

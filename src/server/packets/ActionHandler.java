@@ -3,6 +3,8 @@ package server.packets;
 
 import server.content.quests.QuestRewards;
 import server.content.Sailing;
+import server.content.items.JewelryMaking;
+import server.content.items.Tanning;
 import server.players.Client;
 import server.players.Player;
 import server.players.PlayerAssistant;
@@ -15,6 +17,7 @@ import server.content.minigames.CastleWars;
 import server.content.npc.Shops;
 import server.content.objects.Balloons;
 import server.content.objects.BrimhavenVines;
+import server.content.objects.ClimbOther;
 import server.content.objects.Climbing;
 import server.content.objects.DoubleGates;
 import server.content.objects.Levers;
@@ -22,7 +25,7 @@ import server.content.objects.OtherObjects;
 import server.content.objects.Pickable;
 import server.content.objects.Searching;
 import server.content.objects.SingleGates;
-import server.content.objects.UseOther;
+import server.content.objects.ClimbOther.ClimbData;
 import server.npcs.NPC;
 import server.npcs.NPCHandler;
 import server.util.CycleEvent;
@@ -30,10 +33,14 @@ import server.util.CycleEventContainer;
 import server.util.CycleEventHandler;
 import server.util.Misc;
 import server.util.ScriptManager;
-import server.objects.ClimbOther;
-import server.objects.ClimbOther.ClimbData;
 import server.objects.Object;
 import server.content.skills.*;
+import server.content.skills.impl.Agility;
+import server.content.skills.impl.Fishing;
+import server.content.skills.impl.Mining;
+import server.content.skills.impl.Runecrafting;
+import server.content.skills.impl.Smelting;
+import server.content.skills.impl.Thieving;
 import server.packets.*;
 
 public class ActionHandler {
@@ -504,7 +511,7 @@ public class ActionHandler {
 			c.getPlayerAssistant().movePlayer(2696, 9683, 0);
 			c.sendMessage("You climb down.");
 		} else {
-			UseOther.useDown(c, c.objectId);
+			ClimbOther.useOther(c, c.objectId);
 		}
 		break;
 
@@ -512,7 +519,7 @@ public class ActionHandler {
 		case 9472:
 		case 11867:
 		case 100:
-			UseOther.useDown(c, c.objectId);
+			ClimbOther.useOther(c, c.objectId);
 			break;
 
 		case 1739:

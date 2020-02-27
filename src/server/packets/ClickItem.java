@@ -1,12 +1,12 @@
 package server.packets;
 
 import server.Server;
-import server.content.AdvancedMysteryBox;
+import server.content.items.AdvancedMysteryBox;
+import server.content.items.Pouches;
 import server.content.minigames.Barrows;
 import server.content.minigames.CastleWars;
-import server.content.skills.Herblore;
-import server.content.skills.Pouches;
-import server.content.skills.Prayer;
+import server.content.skills.impl.Herblore;
+import server.content.skills.impl.Prayer;
 import server.players.Client;
 import server.players.PacketType;
 import server.players.Player;

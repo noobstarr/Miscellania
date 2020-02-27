@@ -1,7 +1,7 @@
 package server.content.sound;
 
 import server.Server;
-import server.content.skills.Magic;
+import server.content.skills.impl.Magic;
 import server.npcs.NPCHandler;
 import server.players.Client;
 import server.util.Misc;

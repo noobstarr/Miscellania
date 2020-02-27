@@ -1,6 +1,11 @@
 package server.content.skills;
 
 import server.Config;
+import server.content.skills.impl.Cooking;
+import server.content.skills.impl.Fishing;
+import server.content.skills.impl.Herblore;
+import server.content.skills.impl.Mining;
+import server.content.skills.impl.Woodcutting;
 import server.items.ItemAssistant;
 import server.players.Client;
 

@@ -1,10 +1,10 @@
 package server.content.objects;
 
 import server.Config;
+import server.content.items.LightSources;
 import server.util.CycleEvent;
 import server.util.CycleEventContainer;
 import server.util.CycleEventHandler;
-import server.content.LightSources;
 import server.players.Client;
 import server.util.Misc;
 
@@ -292,15 +292,15 @@ public class Climbing {
 			break;
 
 		case 6436:
-			UseOther.useUp(client, client.objectId);
+			ClimbOther.useUp(client, client.objectId);
 			break;
 
 		case 6434:
-			UseOther.useDown(client, client.objectId);
+			ClimbOther.useOther(client, client.objectId);
 			break;
 		case 1767:
 		if (client.objectX == 3069 && client.objectY == 3856) {
-			UseOther.useDown(client, client.objectId);
+			ClimbOther.useOther(client, client.objectId);
 		}
 		break;
 		case 6439:
@@ -322,7 +322,7 @@ public class Climbing {
 			break;
 		case 5167:
 			
-				UseOther.useDown(client, client.objectId);
+				ClimbOther.useOther(client, client.objectId);
 			
 			break;
 		case 2147:
@@ -395,7 +395,7 @@ public class Climbing {
 				client.getPlayerAssistant().movePlayer(3238, 3458, 0);
 				client.startAnimation(CLIMB_UP);
 			} else if (client.objectX == 3088 && client.objectY == 9971) {
-				UseOther.useUp(client, client.objectId);
+				ClimbOther.useUp(client, client.objectId);
 				// client.startAnimation(CLIMB_UP);
 			} else if (client.objectX == 3209 && client.objectY == 9616) {
 				// OtherObjects.useUp(client, client.objectId);
@@ -415,12 +415,12 @@ public class Climbing {
 				client.getPlayerAssistant().movePlayer(3019, 3337, 0);
 				client.startAnimation(CLIMB_UP);
 			} else {
-				UseOther.useUp(client, client.objectId);
+				ClimbOther.useUp(client, client.objectId);
 			}
 			break;
 
 		case 2405:
-			UseOther.useUp(client, client.objectId);
+			ClimbOther.useUp(client, client.objectId);
 			break;
 
 		case 98:
@@ -515,7 +515,7 @@ public class Climbing {
 
 		case 6278:
 			if (client.objectX == 2637 && client.objectY == 3408) {
-				UseOther.useDown(client, 6278);
+				ClimbOther.useOther(client, 6278);
 			}
 			break;
 

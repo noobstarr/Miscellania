@@ -3,7 +3,7 @@ package server.packets;
 
 import server.Server;
 import server.content.skills.SkillHandler;
-import server.content.skills.Thieving;
+import server.content.skills.impl.Thieving;
 import server.players.Client;
 import server.players.PacketType;
 

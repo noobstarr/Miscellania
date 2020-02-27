@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import server.Config;
 import server.Server;
 import server.content.minigames.BarrowsData;
-import server.content.skills.Smelting;
+import server.content.skills.impl.Smelting;
 import server.items.Item;
 import server.npcs.NPC;
 import server.npcs.NPCHandler;

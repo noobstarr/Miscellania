@@ -2,7 +2,7 @@ package server.items;
 
 import server.Config;
 import server.Server;
-import server.content.Weight;
+import server.content.items.Weight;
 import server.players.Client;
 import server.util.Misc;
 
